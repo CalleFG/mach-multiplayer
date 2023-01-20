@@ -20,7 +20,7 @@ public class ExplosionVFX : AttributesSync
     {
         if (_isInitiated == false) { return; }
         
-        if (particleSystem.isStopped)
+        if (particleSystem.isPlaying == false)
         {
             _spawner.Despawn(gameObject);
         }
@@ -36,7 +36,7 @@ public class ExplosionVFX : AttributesSync
         shape.rotation = rotation * -1;
 
         particleSystem.Play();
-        
+
         _isInitiated = true;
     }
 }
