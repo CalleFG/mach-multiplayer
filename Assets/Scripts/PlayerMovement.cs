@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Alteruna;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         _horizontal = Input.GetAxisRaw("Horizontal");
         _vertical = Input.GetAxisRaw("Vertical");
     }
-
+    
     private void Movement()
     {
         float horizontalSpeed = _horizontal * _playerSpeed;
