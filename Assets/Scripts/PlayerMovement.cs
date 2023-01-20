@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Alteruna;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,13 +11,18 @@ public class PlayerMovement : MonoBehaviour
     private float _diagonalSpeedLimit = 0.7f;
     private Transform _body;
     
+    private Alteruna.Avatar _avatar;
+    
     void Start()
     {
+        _avatar = GetComponent<Alteruna.Avatar>();
+        if (!_avatar.IsMe) return;
         _body = transform;
     }
 
     void Update()
     {
+        if (!_avatar.IsMe) return;
         InputCollection();
         Movement();
     }
