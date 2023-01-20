@@ -3,7 +3,7 @@ using UnityEngine;
 public class ProjectileShooter : MonoBehaviour
 {
     private Alteruna.Avatar _avatar;
-    private Alteruna.Spawner _spawner;
+    private Mach.Spawner _spawner;
     
     private bool _canFire = true;
     private float _timer = 0.0f;
@@ -16,7 +16,7 @@ public class ProjectileShooter : MonoBehaviour
     private void Start()
     {
         _avatar = GetComponent<Alteruna.Avatar>();
-        _spawner = GameObject.FindGameObjectWithTag("Multiplayer").GetComponent<Alteruna.Spawner>();
+        _spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Mach.Spawner>();
     }
     
     private void Update()

@@ -299,6 +299,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &872770802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872770805}
+  - component: {fileID: 872770804}
+  - component: {fileID: 872770803}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &872770803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872770802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d997e535db62a8f459171287f3502633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 1415618526}
+  UID: {fileID: 0}
+  Reliability: 1
+  _spawnableObjects:
+  - {fileID: 8548634826847756376, guid: cfc8a60c80d4d57439172ce1d664ca3a, type: 3}
+  - {fileID: 5387444083382107793, guid: 9f6db6002fda1e0459de054d5c3b13ab, type: 3}
+--- !u!114 &872770804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872770802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1709514741, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 3affd4c3-b7ae-42bb-a4dc-3a54274f72ef
+--- !u!4 &872770805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872770802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1310579076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -470,7 +534,7 @@ MonoBehaviour:
     Users: 
   MaxPlayers: 10
   SpawnAvatarOnJoin: 1
-  AvatarPrefab: {fileID: 3448926959209057003, guid: b0f54317a2120894bb3c369f2758b662, type: 3}
+  AvatarPrefab: {fileID: 7044820103230764797, guid: f9a839e077d31ac41b90049584a90d13, type: 3}
   AvatarSpawnLocation: {fileID: 115788387}
   SpawnAvatarPerIndex: 0
   AvatarSpawnLocations: []

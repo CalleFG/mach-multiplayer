@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Projectile : AttributesSync
 {
-    private Alteruna.Spawner _spawner;
+    private Mach.Spawner _spawner;
     private Transform _transform;
     private float _projectileSpeed = 0.005f;
     private int _instigatorID = -1;
@@ -12,7 +12,7 @@ public class Projectile : AttributesSync
     private void Start()
     {
         _transform = transform;
-        _spawner = GameObject.FindGameObjectWithTag("Multiplayer").GetComponent<Alteruna.Spawner>();
+        _spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Mach.Spawner>();
     }
 
     private void FixedUpdate()
@@ -29,6 +29,10 @@ public class Projectile : AttributesSync
         {
             hittable.Hit(_instigatorID);
         }
+
+        GameObject obj = _spawner.Spawn(1, _transform.position, _transform.rotation);
+        ExplosionVFX vfx = obj.GetComponent<ExplosionVFX>();
+        vfx.PlayVFX(12, transform.rotation.eulerAngles);
 
         _spawner.Despawn(gameObject);
     }
