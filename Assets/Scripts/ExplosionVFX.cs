@@ -9,12 +9,16 @@ public class ExplosionVFX : MonoBehaviour
     [SerializeField]
     private ParticleSystem particleSystem;
 
-    private Alteruna.Spawner _spawner;
+    private bool _isInitiated = false;
+    
+    
     private void Update()
     {
+        if (_isInitiated == false) { return; }
+        
         if (particleSystem.isStopped)
         {
-             _spawner.Despawn(gameObject);
+
         }
     }
 
@@ -28,5 +32,7 @@ public class ExplosionVFX : MonoBehaviour
         shape.rotation = rotation * -1;
 
         particleSystem.Play();
+        
+        _isInitiated = true;
     }
 }
