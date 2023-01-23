@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a3183df38ab7c4ab51eedc719a4400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 2854000089151042163, guid: cb69f0199a25bae42b035961ca56e671, type: 3}
+  Multiplayer: {fileID: 0}
+  UID: {fileID: 0}
+  Reliability: 1
+  particleSystem: {fileID: 1051146367493228711, guid: c81ff55af063e244fae7112f07b02a94, type: 3}
 --- !u!114 &6324611459441086787
 MonoBehaviour:
   m_ObjectHideFlags: 0
