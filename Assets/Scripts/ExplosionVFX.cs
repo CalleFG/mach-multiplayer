@@ -1,3 +1,4 @@
+using System.Threading;
 using Alteruna;
 using UnityEngine;
 
@@ -18,15 +19,19 @@ public class ExplosionVFX : AttributesSync
 
     private void Update()
     {
-        if (_isInitiated == false) { return; }
-        Debug.Log("STILL HERE");
-        if (particleSystem.IsAlive() == false)
+        if (_isInitiated == false) 
+        { 
+            _isInitiated = true; 
+            return; 
+        }
+
+        if (particleSystem.subEmitters.GetSubEmitterSystem(0).particleCount == 0)
         {
-            Debug.Log("DESTROYED");
-            //_spawner.Despawn(gameObject);
+            _spawner.Despawn(gameObject);
         }
     }
-
+    
+    
     public void PlayVFX(uint seed, Vector3 rotation)
     {
         // Explosion
@@ -37,7 +42,5 @@ public class ExplosionVFX : AttributesSync
         shape.rotation = rotation * -1;
 
         particleSystem.Play();
-        Debug.Log("CREATED");
-        _isInitiated = true;
     }
 }
