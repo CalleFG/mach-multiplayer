@@ -32,7 +32,8 @@ public class Projectile : AttributesSync
 
         GameObject obj = _spawner.Spawn(1, _transform.position, _transform.rotation);
         ExplosionVFX vfx = obj.GetComponent<ExplosionVFX>();
-        vfx.PlayVFX(12, transform.rotation.eulerAngles);
+        float angle = Vector2.SignedAngle(Vector2.up, col.GetContact(0).normal) * -1;
+        vfx.PlayVFX(12, new Vector3(0.0f, 0.0f, angle));
 
         _spawner.Despawn(gameObject);
     }
