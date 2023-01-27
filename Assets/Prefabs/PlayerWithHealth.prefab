@@ -94,6 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5601305001767609495}
   - component: {fileID: 5905377931796317518}
+  - component: {fileID: 8450066222520116371}
+  - component: {fileID: 6982307814692547559}
   m_Layer: 0
   m_Name: RotatePoint
   m_TagString: Untagged
@@ -129,6 +131,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46fb82290beb65b4da62d0141a3f6950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8450066222520116371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351904780260229172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1709514741, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 5ab08718-f80f-4bd1-8975-fb6a4a82c8cf
+--- !u!114 &6982307814692547559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351904780260229172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  UID: {fileID: 0}
+  BucketBehaviors:
+  - Name: Min
+    NetLOD: 0
+    Frequency: -1
+    Pending: 0
+    LastUpdated: 0
+    NeverString: Never
+    RealtimeString: Realtime
+  - Name: Low
+    NetLOD: 1
+    Frequency: 0
+    Pending: 0
+    LastUpdated: 0
+    NeverString: Never
+    RealtimeString: Realtime
+  - Name: Mid
+    NetLOD: 2
+    Frequency: 0
+    Pending: 0
+    LastUpdated: 0
+    NeverString: Never
+    RealtimeString: Realtime
+  - Name: High
+    NetLOD: 3
+    Frequency: 0
+    Pending: 0
+    LastUpdated: 0
+    NeverString: Never
+    RealtimeString: Realtime
+  - Name: Max
+    NetLOD: 4
+    Frequency: 500
+    Pending: 0
+    LastUpdated: 0
+    NeverString: Never
+    RealtimeString: Realtime
 --- !u!1 &7330843799666839593
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +264,6 @@ MonoBehaviour:
   UID: {fileID: 0}
   Reliability: 1
   text: {fileID: 7330843799790302933}
-  avatar: {fileID: 7044820103230764797}
 --- !u!223 &7330843799666839584
 Canvas:
   m_ObjectHideFlags: 0
@@ -256,7 +320,7 @@ RectTransform:
   m_GameObject: {fileID: 7330843799790302935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7330843799666839597}
@@ -264,8 +328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000062575, y: 1.24}
-  m_SizeDelta: {x: 58.4919, y: 23.2928}
+  m_AnchoredPosition: {x: 0.0000056324, y: 0.75}
+  m_SizeDelta: {x: 47.2481, y: 17.3933}
   m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!222 &7330843799790302954
 CanvasRenderer:
@@ -300,7 +364,7 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -505,7 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPoint: {fileID: 4035599168544086356}
-  projectileSpeed: 0.005
+  projectileSpeed: 0.08
   cooldown: 2
   indexToSpawn: 0
 --- !u!114 &3721570178631380733
@@ -547,9 +611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54afaa604a126a4bb1dfa3a6ae8de8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Multiplayer: {fileID: 0}
-  UID: {fileID: 0}
-  Reliability: 1
 --- !u!114 &9202499711690108307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a39caa5af41ab04393550af4ef2e3be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avatar: {fileID: 7044820103230764797}
 --- !u!114 &7044820103230764797
 MonoBehaviour:
   m_ObjectHideFlags: 0

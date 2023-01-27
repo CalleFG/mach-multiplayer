@@ -10,12 +10,11 @@ public class health : AttributesSync
 
     public void TakeDamage(int dmg)
     {
-        healthPoints -= dmg;
+        healthPoints -= 1;
     }
     
     void Update()
     {
-
         text.text = ""+healthPoints;
     }
 }

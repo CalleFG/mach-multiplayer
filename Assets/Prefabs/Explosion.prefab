@@ -50,6 +50,7 @@ MonoBehaviour:
   UID: {fileID: 0}
   Reliability: 1
   particleSystem: {fileID: 3190300704255697181}
+  lifeTime: 0.17
 --- !u!114 &6324611459441086787
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,9 +8,10 @@ public class ExplosionVFX : AttributesSync
     [SerializeField]
     private ParticleSystem particleSystem;
 
+    [SerializeField] private float lifeTime = 0.17f;
+    
     private Mach.Spawner _spawner;
-
-    private bool _isInitiated = false;
+    private float _timer = 0.0f;
 
     private void Start()
     {
@@ -19,27 +20,25 @@ public class ExplosionVFX : AttributesSync
 
     private void Update()
     {
-        if (_isInitiated == false) 
-        { 
-            _isInitiated = true; 
-            return; 
-        }
-
-        if (particleSystem.subEmitters.GetSubEmitterSystem(0).particleCount == 0)
+        _timer += 1.0f * Time.deltaTime;
+        if (_timer >= lifeTime)
         {
             _spawner.Despawn(gameObject);
         }
     }
-    
-    
-    public void PlayVFX(uint seed, Vector3 rotation)
+
+    public void PlayVFX(uint seed, float rotation)
     {
-        // Explosion
+        BroadcastRemoteMethod("PlayVFXInternal", seed, rotation);
+    }
+
+    [SynchronizableMethod]
+    private void PlayVFXInternal(uint seed, float rotation)
+    {
         particleSystem.randomSeed = seed;
-        // Parts
         particleSystem.subEmitters.GetSubEmitterSystem(0).randomSeed = seed;
         ParticleSystem.ShapeModule shape = particleSystem.subEmitters.GetSubEmitterSystem(0).shape;
-        shape.rotation = rotation * -1;
+        shape.rotation = new Vector3(0.0f, 0.0f, rotation);
 
         particleSystem.Play();
     }
